@@ -5,8 +5,12 @@ $user='root';
 $pass='';
 $db='Need2Kno';
 
-$email= $_POST['email'];
-$password= $_POST['pass'];
+//prevent sql injection
+$email = mysql_real_escape_string($_POST['email']);
+$password = mysql_real_escape_string($_POST['pass']);
+
+//encrypt password before comparison
+$password =md5($password);
 
 
 $con=mysqli_connect($host,$user,$pass,$db);
