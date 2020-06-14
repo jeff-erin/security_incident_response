@@ -1,0 +1,41 @@
+<html>
+<header id=“head”>
+	<title>Report a New Incident - Need2Kno</title>
+	<link rel="stylesheet" type="text/css" href="">
+
+	<h1>Need2Kno</h1>
+	<h3>Report a potential incident</h3><br><br>
+</header>
+<body>
+
+	<div id="nav">
+		<a href='https://localhost/SeniorProject/html/Home_Standard.html'>Home</a>
+  		<a href='https://localhost/SeniorProject/html/Incidents.html'>Incidents</a>
+  		<a href='https://localhost/SeniorProject/html/Ticket.html'>Report New Incident</a>
+  		<input type="text" placeholder="Search">
+
+
+	</div>
+
+	<form  action="TicketSubmission.php" method="post">
+
+			<p>
+				<label>Enter your email here: </label>
+				<input type="text" name="email" required autocomplete="off" />
+			</p>
+
+			<p>
+				<label>Please enter a description of the potential incident here. We ask that you provide as much detail as possible and include any relevant information: </label>
+				<textarea></textarea>
+
+
+
+			</p>
+			
+			<p>
+				<input type="submit">
+			</p>
+	</form>
+
+</body>
+</html>
