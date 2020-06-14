@@ -8,16 +8,17 @@ $user='root';
 $pass='';
 $db='Need2Kno';
 
+
+$con=mysqli_connect($host,$user,$pass,$db);
+
 //prevent sql injection
-$fname = mysql_real_escape_string($_POST['fname']);
-$lname = mysql_real_escape_string($_POST['lname']);
-$password = mysql_real_escape_string($_POST['password']);
-$email = mysql_real_escape_string($_POST['email']);
+$fname = mysqli_real_escape_string($con, $_POST['fname']);
+$lname = mysqli_real_escape_string($con, $_POST['lname']);
+$password = mysqli_real_escape_string($con, $_POST['password']);
+$email = mysqli_real_escape_string($con, $_POST['email']);
 
 //encrypt password before entering into db
 $password = md5($password);
-
-$con=mysqli_connect($host,$user,$pass,$db);
 
 $sql="insert into standard_user (f_name,l_name,password,email) values('$fname','$lname','$password','$email')";
 $query=mysqli_query($con,$sql);
