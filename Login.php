@@ -5,16 +5,15 @@ $user='root';
 $pass='';
 $db='Need2Kno';
 
+$con=mysqli_connect($host,$user,$pass,$db);
+mysqli_select_db($con,$db);
+
 //prevent sql injection
-$email = mysql_real_escape_string($_POST['email']);
-$password = mysql_real_escape_string($_POST['pass']);
+$email = mysqli_real_escape_string($con, $_POST['email']);
+$password = mysqli_real_escape_string($con, $_POST['pass']);
 
 //encrypt password before comparison
 $password =md5($password);
-
-
-$con=mysqli_connect($host,$user,$pass,$db);
-mysqli_select_db($con,$db);
 
 $result = mysqli_query($con,"select * from standard_user where email = '$email' and password = '$password'") or die("Unable to query db".mysqli_error($con));
 
