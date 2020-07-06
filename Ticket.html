@@ -1,40 +1,39 @@
 <html>
 <header id=“head”>
 	<title>Report a New Incident - Need2Kno</title>
-	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" type="text/css" href="../css/TicketStyle.css">
 
 	<h1>Need2Kno</h1>
-	<h3>Report a potential incident</h3><br><br>
+	<br>
 </header>
 <body>
 
-	<div id="nav">
-		<a href='https://localhost/SeniorProject/html/Home_Standard.html'>Home</a>
-  		<a href='https://localhost/SeniorProject/html/Incidents.html'>Incidents</a>
-  		<a href='https://localhost/SeniorProject/html/Ticket.html'>Report New Incident</a>
-  		<input type="text" placeholder="Search">
-
-
+	<div class="nav">
+		<a href='https://localhost/SeniorProject/html/Home_Standard.php'>Home</a>
+  		<a href='https://localhost/SeniorProject/html/Incidents.php'>Incidents</a>
+  		<a class="selected" href='https://localhost/SeniorProject/html/Ticket.html'>Report New Incident</a>
+  		<input class="search" type=text placeholder="Search">
 	</div>
+	<br><br>
 
-	<form  action="TicketSubmission.php" method="post">
+	<form  action="Ticket.php" method="post">
 
-			<p>
-				<label>Enter your email here: </label>
-				<input type="text" name="email" required autocomplete="off" />
-			</p>
-
-			<p>
-				<label>Please enter a description of the potential incident here. We ask that you provide as much detail as possible and include any relevant information: </label>
-				<textarea></textarea>
-
-
-
-			</p>
 			
-			<p>
-				<input type="submit">
-			</p>
+				<h3>Classify this incident: </h3>
+				<select name="classify" required>
+					<option value="phishing">Phishing Email</option>
+					<option value="malware">Malware</option>
+					<option value="quid">Quid Pro Quo</option>
+					<option value="Other">Other</option>
+				</select><br><br>
+				<h3>Not sure how to classify this incident?<br><a href='Info.html'>Click here for more info</a></h3><br><br>
+
+			
+				<label>Please enter a description of the potential incident here. We ask that you provide as much detail as possible and include any relevant information: </label><br>
+				<textarea cols="35" rows="15" name="details"></textarea><br><br>
+			
+			
+				<input type=submit>
 	</form>
 
 </body>
