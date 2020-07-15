@@ -1,0 +1,68 @@
+*{
+color:white;
+background-color: #24242A;
+}
+h1{ 
+font-family: "Rockwell Extra Bold", "Rockwell Bold", monospace; 
+font-size: 65px; 
+font-style: normal;
+ font-variant: normal;
+  font-weight: 700; 
+  line-height: 53.9px; }
+
+
+h1, h2{
+text-align:center;
+}
+
+h2{
+font-size:25px;	
+}
+
+div{
+text-align:center;
+}
+
+label{
+	background-color:grey;
+}
+
+form{
+display:inline-block;
+border:4px solid white;
+border-radius: 8px;
+height: 270px;
+width:350px;
+margin:20px;
+background-color: grey;
+}
+
+
+input[type=text] {
+width:90%;
+border:2px solid white;
+border-radius: 4px;
+}
+
+input[type=password] {
+width:90%;
+border:2px solid white;
+border-radius: 4px;
+}
+
+button[type=submit]{
+width:90%;
+height: 45px;
+cursor: pointer;
+border:2px solid white;
+border-radius: 4px;
+}
+
+button:hover{
+background-color: white;
+color: #24242A;
+}
+
+h3{
+	text-align:center;
+}
