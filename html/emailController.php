@@ -71,6 +71,66 @@
 
 	}
 
+//Notify Assigned team member of new ticket
+	function notifySecurity($securityEmail, $userEmail, $category)
+	{
+
+	
+
+		$mail = new PHPMailer(true);
+		
+		try {
+		    //Server settings
+		    $mail->SMTPDebug = 0;                      // Enable verbose debug output
+		    $mail->isSMTP();                                            // Send using SMTP
+		    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+		    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+		    $mail->Username   = 'NOREPLYNeed2Kno@gmail.com';                     // SMTP username
+		    $mail->Password   = '3^04QJr*I';                               // SMTP password
+		    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+		    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+		    //Recipients
+		    $mail->setFrom('NOREPLYNeed2Kno@gmail.com', 'Need2Kno');
+		    $mail->addAddress($securityEmail);     // Add a recipient
+		
+		    // Attachments
+		    //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+		    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+		    // Content
+		    $mail->isHTML(true);                                  // Set email format to HTML
+		    $mail->Subject = 'New Need2Kno Incident Assigned to You';
+		    $mail->Body    = '<!DOCTYPE html>
+					<html lang="en">
+					<head>
+						<meta charset="utf-8">
+						<title>New Incident </title>
+					</head>
+					<body>
+						<div class="wrapper">
+						<p>
+							Hello,
+
+						<p>
+						<p>
+
+							A new '.$category.' ticket from user '.$userEmail.' has been assigned to you. Please log in and review the incident promptly.
+						</p>
+						<a href=https://localhost/SeniorProject/html/Login.html>Click here to login</a>
+						</div>
+
+					</body>
+					</html>' ;
+
+		    $mail->send();
+		   // echo 'Message has been sent';
+		} catch (Exception $e) {
+		   // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+		}
+
+	}
+
 
 
 	//New General Incident
