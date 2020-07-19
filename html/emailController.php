@@ -13,7 +13,7 @@
 
 
 	//email Verification
-	function sendVerificationEmail($userEmail,$fname)
+	function sendVerificationEmail($userEmail,$fname,$token)
 	{
 
 	
@@ -55,9 +55,9 @@
 						<p>
 						<p>
 							This Email address has been used to register a new Need2Kno account.
-							If this is valid, Thank you for registering and please click the link below to login to our site.
+							If this is valid, Thank you for registering and please click the link below to verify your registration to our site.
 						</p>
-						<a href=https://localhost/SeniorProject/html/Login.html>Click here to login</a>
+						<a href=https://localhost/SeniorProject/html/Verification.php?token='.$token.'>Click here to verify</a>
 						</div>
 
 					</body>
