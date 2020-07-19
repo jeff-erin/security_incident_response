@@ -32,12 +32,34 @@ $result = mysqli_query($con,"select * from standard_user WHERE email = '$email' 
 
 $var = mysqli_fetch_array($result);
 if($var['password'] == $password){
+	if($var[is_verified == 0]){
+		header('Location: http://localhost/SeniorProject/html/Verification.php');
+	}
+	else{
 	echo "Login is a success!";
 	header('Location: http://localhost/SeniorProject/html/Home_Standard.php');
+	}
 }
 else{
 	echo "Login Failed";
 }
 
+//function to check if user is verified
+function verifyuser($token){
+	$sql= "SELECT * FROM standard_user WHERE token= '$token' Limit 1";
+	$result=mysqli_query($con,$sql);
+
+	if(mysqli_num_rows($result)>0){
+		$user=mysqli_fetch_assoc($result);
+		$update_query="UPDATE standard_user SET is_verified=1 WHERE token='$token' ";
+//if set to verified log them in 
+		if(mysqli_query($con,$update_query)){
+
+			$_SESSION['uid'] = $user['user_id'];
+			$_SESSION['email'] = $user['email'];
+			header('Location: http://localhost/SeniorProject/html/Home_Standard.php');
+		}
+	}
+}
 
 ?>
