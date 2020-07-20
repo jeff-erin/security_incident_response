@@ -1,5 +1,8 @@
 <?php
 
+//require_once'Verification.html';
+
+
 session_start();
 $host='localhost';
 $user='root';
@@ -32,8 +35,9 @@ $result = mysqli_query($con,"select * from standard_user WHERE email = '$email' 
 
 $var = mysqli_fetch_array($result);
 if($var['password'] == $password){
-	if($var[is_verified == 0]){
-		header('Location: http://localhost/SeniorProject/html/Verification.php');
+	if($var['is_verified'] == 0){
+	header('Location: http://localhost/SeniorProject/html/Verification.html');
+
 	}
 	else{
 	echo "Login is a success!";
@@ -46,6 +50,16 @@ else{
 
 //function to check if user is verified
 function verifyuser($token){
+	$host='localhost';
+	$user='root';
+	$pass='';
+	$db='Need2Kno';
+
+
+
+	$con=mysqli_connect($host,$user,$pass,$db);
+	mysqli_select_db($con,$db);
+
 	$sql= "SELECT * FROM standard_user WHERE token= '$token' Limit 1";
 	$result=mysqli_query($con,$sql);
 
@@ -57,6 +71,7 @@ function verifyuser($token){
 
 			$_SESSION['uid'] = $user['user_id'];
 			$_SESSION['email'] = $user['email'];
+			$_SESSION['is_verified'] = 1;
 			header('Location: http://localhost/SeniorProject/html/Home_Standard.php');
 		}
 	}
