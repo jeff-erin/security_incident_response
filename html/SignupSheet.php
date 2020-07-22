@@ -14,15 +14,14 @@ $fname =mysqli_real_escape_string($con, $_POST['fname']);
 $lname =mysqli_real_escape_string($con, $_POST['lname']);
 $password =mysqli_real_escape_string($con, $_POST['password']);
 $email=mysqli_real_escape_string($con, $_POST['email']);
-$token=bin2hex(random_bytes(10));
-$is_verified=false;
+$token=bin2hex(random_bytes(5));
+$is_verified=0;
 
 
 
 
 
-
-$sql="insert into standard_user (f_name,l_name,password,email) values('$fname','$lname','$password','$email','$token','is_verified')";
+$sql="insert into standard_user (f_name,l_name,password,email,token,is_verified) values('$fname','$lname','$password','$email','$token','$is_verified')";
 $query=mysqli_query($con,$sql);
 
 sendVerificationEmail($email,$fname,$token);
