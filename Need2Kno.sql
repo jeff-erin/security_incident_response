@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 12, 2020 at 03:51 PM
+-- Generation Time: Jul 23, 2020 at 02:05 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -36,6 +36,15 @@ CREATE TABLE `it_sec_user` (
   `password` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `it_sec_user`
+--
+
+INSERT INTO `it_sec_user` (`it_sec_id`, `f_name`, `l_name`, `email`, `password`) VALUES
+(2, 'Jeffrey', 'Gore', 'gorej1@wit.edu', 'N3wUs3r'),
+(3, 'Erin', 'Shea', 'sheae1@wit.edu', 'N3wUs3r'),
+(4, 'Jeffrey ', 'Gore', 'gorej7@outlook.com', 'N3wUs3r');
+
 -- --------------------------------------------------------
 
 --
@@ -47,16 +56,20 @@ CREATE TABLE `standard_user` (
   `f_name` varchar(30) NOT NULL,
   `l_name` varchar(30) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `password` varchar(25) NOT NULL
+  `password` varchar(25) NOT NULL,
+  `token` varchar(11) NOT NULL,
+  `is_verified` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `standard_user`
 --
 
-INSERT INTO `standard_user` (`user_id`, `f_name`, `l_name`, `email`, `password`) VALUES
-(2, 'Jeffrey', 'Gore', 'gorej1@wit.edu', 'password123'),
-(3, '', '', 'f', '');
+INSERT INTO `standard_user` (`user_id`, `f_name`, `l_name`, `email`, `password`, `token`, `is_verified`) VALUES
+(11, 'Jeffrey', 'Gore', 'gorej1@wit.edu', 'password123', '0', 0),
+(12, 'Jeffrey', 'Gore', 'gorej1@wit.edu', 'password123', '0', 0),
+(13, 'Jeffrey', 'Gore', 'gorej1@wit.edu', 'N3wUs3r', '0', 0),
+(19, 'Jon', 'Snow', 'gorej1@wit.edu', 'test', '395a23d55a', 0);
 
 -- --------------------------------------------------------
 
@@ -67,11 +80,24 @@ INSERT INTO `standard_user` (`user_id`, `f_name`, `l_name`, `email`, `password`)
 CREATE TABLE `ticket` (
   `ticket_id` int(8) NOT NULL,
   `user_id` int(4) NOT NULL,
-  `it_sec_id` int(4) NOT NULL,
-  `isOpen` int(11) NOT NULL,
+  `isOpen` tinyint(1) NOT NULL,
   `Details` varchar(400) NOT NULL,
-  `date_created` timestamp NOT NULL DEFAULT current_timestamp()
+  `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
+  `Classification` varchar(30) NOT NULL,
+  `it_sec_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ticket`
+--
+
+INSERT INTO `ticket` (`ticket_id`, `user_id`, `isOpen`, `Details`, `date_created`, `Classification`, `it_sec_id`) VALUES
+(1, 2, 0, 'test', '2020-06-22 21:48:20', 'phishing', 0),
+(2, 2, 0, 'Testing again\r\n', '2020-06-22 23:20:25', 'phishing', 0),
+(5, 5, 1, 'I clicked a link and now my computer is acting strange. ', '2020-06-22 23:45:21', 'malware', 0),
+(6, 10, 1, 'Tried to download a video editing software. Now my computer appears to have some kind of ransomware infection. Pop up claiming I have 24 hours to provide X amount of money to unlock my machine. PLEASE HELP!!!', '2020-06-23 22:20:17', 'malware', 0),
+(7, 12, 1, 'Malware', '2020-06-24 15:41:07', 'malware', 0),
+(8, 12, 1, 'Test', '2020-07-20 17:46:09', 'malware', 2);
 
 --
 -- Indexes for dumped tables
@@ -103,19 +129,19 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `it_sec_user`
 --
 ALTER TABLE `it_sec_user`
-  MODIFY `it_sec_id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `it_sec_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `standard_user`
 --
 ALTER TABLE `standard_user`
-  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `ticket_id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `ticket_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
