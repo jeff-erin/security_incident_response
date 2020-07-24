@@ -11,9 +11,15 @@
 
 	<div id="nav">
 		<a href='https://localhost/SeniorProject/html/Home_Standard.html'>Home</a>
-  		<a href='https://localhost/SeniorProject/html/Incidents.html'>Incidents</a>
+  		<a href='https://localhost/SeniorProject/html/Incidents.php'>Incidents</a>
   		<a href='https://localhost/SeniorProject/html/Ticket.html'>Report an New Incident</a>
-  		<input type="text" placeholder="Search">
+  			<form action= "Search.php" method="GET">
+  				<input type="submit" name= "submit"
+  				class="submit" value="GO">
+  				<input type="text" name= "search"
+  				class="search" placeholder="Search">
+  				
+  			</form>
 	</div>
 
 	<div id="OpenTickets">

@@ -1,4 +1,3 @@
-
 <html>
 <header id=“head”>
 	<title>Incidents - Need2Kno</title>
@@ -22,6 +21,10 @@
   			</form>
 	</div>
 
+	<div class="srch">
+		<h3>Your Search Results</h3>
+
+	</div>
 	<div  class="open">
 		<h3>Open Incidents</h3>
 		<table>
@@ -33,18 +36,20 @@
 			</tr>
 			<?php
 
-			session_start();
+		    session_start();
 			$host='localhost';
 			$user='root';
 			$pass='';
 			$db='Need2Kno';
 			$uid = $_SESSION["uid"];
 
+			$search =$_GET['search'];
+
 
 
 			$con=mysqli_connect($host,$user,$pass,$db);
 				mysqli_select_db($con,$db);
-			$sql = "SELECT ticket_id, date_created, Details, Classification FROM ticket WHERE user_id = '$uid' AND isOpen = True";
+			$sql = "SELECT ticket_id, date_created, Details, Classification FROM ticket WHERE user_id = '$uid' AND Classification LIKE '%$search%' AND isOpen = True";
 
 			$result = $con-> query($sql);
 
@@ -71,7 +76,10 @@
 				<th>Ticket Details</th>
 			</tr>
 			<?php
-			$sql = "SELECT ticket_id, date_created, Details, Classification FROM ticket WHERE user_id = '$uid' AND isOpen = False";
+
+			$search =$_GET['search'];
+
+			$sql = "SELECT ticket_id, date_created, Details, Classification FROM ticket WHERE user_id = '$uid' AND Classification LIKE '%$search%' AND isOpen = False";
 
 			$result = $con-> query($sql);
 

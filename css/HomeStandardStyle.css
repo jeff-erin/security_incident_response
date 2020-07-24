@@ -27,6 +27,15 @@ font-style: normal;
   background-color:grey;
 }
 
+.submit{
+float:right;
+margin:10px;
+padding:5px;
+border:2px solid white;
+border-radius:4px;
+color:white;
+}
+
 .search{
 float:right;
 margin:10px;
@@ -36,6 +45,7 @@ border-radius:4px;
 color:white;
 }
 
+
 .nav a.selected{
 color:#24242A;
 background-color:white;
@@ -44,4 +54,12 @@ background-color:white;
 .nav a:hover{
 background-color:white;
 color:#24242A;
+}
+
+p{
+  border: 
+}
+
+h3{
+  
 }
