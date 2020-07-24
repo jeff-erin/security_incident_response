@@ -32,3 +32,4 @@ header('Location: http://localhost/SeniorProject/html/Post_reg.html')
 
 
 ?>
+?>
