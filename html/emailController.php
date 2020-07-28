@@ -131,7 +131,7 @@ function newSecurityUser($userEmail)
 	}
 
 //Notify Assigned team member of new ticket
-	function notifySecurity($securityEmail, $userEmail, $category)
+	function notifySecurity($securityEmail, $userEmail, $category, $ticket_id)
 	{
 
 	
@@ -174,7 +174,12 @@ function newSecurityUser($userEmail)
 						<p>
 						<p>
 
+							Ticket ID: #'.$ticket_id.'
+						<p> 
+
 							A new '.$category.' ticket from user '.$userEmail.' has been assigned to you. Please log in and review the incident promptly.
+
+
 						</p>
 						<a href=https://localhost/SeniorProject/html/IT_Login.html>Click here to login</a>
 						</div>
@@ -352,10 +357,14 @@ function closedIncidentEmail($userEmail,$ticketID)
 						<div class="wrapper">
 						<p>
 							Hello ,
+						<p>
+	
 
 							Your ticket has been created. A Security Team member has been notified and is working on your case.
 
-							You reported a possible phishing incident. If you entered your credentials, please change your password promptly. For more information and tips on how to spot a phishing email please refer to the Need2Kno Homepage.
+							You reported a possible phishing incident. If you entered your credentials, please change your password promptly. 
+						<p>
+							For more information and tips on how to spot a phishing email please refer to the Need2Kno Homepage.
 						</p>
 						<a href=https://localhost/SeniorProject/html/Login.html>Click here to login</a>
 						</div>
@@ -415,9 +424,12 @@ function closedIncidentEmail($userEmail,$ticketID)
 
 							Your ticket has been created. A Security Team member has been notified and is working on your case.
 							You reported a malware incident. While the Security Team is working on this incident, you should:
+						<p>
 
 							1.Disconnect your machine from the Internet
+						<p>
 							2.Avoid logging into any accounts
+						<p>
 							3.Check your machines activity monitor and end any suspicious processes that have high CPU
 							
 						</p>
@@ -476,11 +488,16 @@ function closedIncidentEmail($userEmail,$ticketID)
 							Hello ,
 
 							Your ticket has been created. A Security Team member has been notified and is working on your case.
+						<p>
 
 							You reported a possible Quid Pro Quo incident. If you entered your credentials, please change your password promptly. Some good security measure tips include:
+						<p>
 							1. Never give personal or account information unless you initiated the exchange.
+						<p>
 							2. Always call the company back using the company’s phone number available via their website. DO not call through a phone number provided by the person you were conversing with.
+						<p>
 							3. If you’re at all suspicious about the email, a wise attempt would be to report it.
+						<p>
 							4. Modify your password regularly.  
 						</p>
 						<a href=https://localhost/SeniorProject/html/Login.html>Click here to login</a>

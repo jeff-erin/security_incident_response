@@ -22,6 +22,8 @@ $sql="insert into ticket (Classification,Details,isOpen,user_id,it_sec_id) value
 
 $query=mysqli_query($con,$sql);
 
+$ticketID=mysqli_insert_id($con);
+
 //query for security user email
 $secSQL="SELECT * FROM it_sec_user WHERE it_sec_id= '$random' Limit 1";
 $secquery=mysqli_query($con,$secSQL);
@@ -30,10 +32,13 @@ $secUser=mysqli_fetch_assoc($secquery);
 
 $secEmail=$secUser['email'];
 
-//echo $secEmail;
 
 
-notifySecurity($secEmail, $email, $classify);//call function to notify security of assignment
+
+//echo $ticketID;
+
+
+notifySecurity($secEmail, $email, $classify,$ticketID);//call function to notify security of assignment
 
 //Security Playbook: different notification based on classification
 if($classify == 'phishing'){
