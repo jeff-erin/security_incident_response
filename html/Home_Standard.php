@@ -18,10 +18,16 @@ if ( isset( $_SESSION['user_id'] ) ) {
 
 
 	<div class="nav">
-		<a class="selected" href='https://localhost/SeniorProject/html/Home_Standard.html'>Home</a>
+		<a class="selected" href='https://localhost/SeniorProject/html/Home_Standard.php'>Home</a>
   		<a href='https://localhost/SeniorProject/html/Incidents.php'>Incidents</a>
   		<a href='https://localhost/SeniorProject/html/Ticket.html'>Report New Incident</a>
-  		<input class="search" type=text placeholder="Search">
+  			<form action= "Search.php" method="GET">
+  				<input type="submit" name= "submit"
+  				class="submit" value="GO">
+  				<input type="text" name= "search"
+  				class="search" placeholder="Search">
+
+  			</form>
 	</div>
 	<br><br>
 

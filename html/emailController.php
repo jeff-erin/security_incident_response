@@ -176,7 +176,7 @@ function newSecurityUser($userEmail)
 
 							A new '.$category.' ticket from user '.$userEmail.' has been assigned to you. Please log in and review the incident promptly.
 						</p>
-						<a href=https://localhost/SeniorProject/html/Login.html>Click here to login</a>
+						<a href=https://localhost/SeniorProject/html/IT_Login.html>Click here to login</a>
 						</div>
 
 					</body>
@@ -355,7 +355,7 @@ function closedIncidentEmail($userEmail,$ticketID)
 
 							Your ticket has been created. A Security Team member has been notified and is working on your case.
 
-							You reported a possible phishing incident. If you entered your credentials, please change your password promptly. For more information and tips on how to spot a phishing email please refer to the Need2Know Homepage.
+							You reported a possible phishing incident. If you entered your credentials, please change your password promptly. For more information and tips on how to spot a phishing email please refer to the Need2Kno Homepage.
 						</p>
 						<a href=https://localhost/SeniorProject/html/Login.html>Click here to login</a>
 						</div>

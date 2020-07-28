@@ -14,8 +14,8 @@ font-style: normal;
 
 
 .nav{
-	background-color:grey;
-	overflow:hidden;
+  background-color:grey;
+  overflow:hidden;
 }
   .nav a {
   float: left;
