@@ -11,11 +11,11 @@ List the steps on how to run your project
 
 ## Features (10 pts)
 
-*Standard User Features
+* Standard User Features
     1. 
     2. 
     3. 
- *IT Security User Features
+ * IT Security User Features
     1.
     2.
     3.
