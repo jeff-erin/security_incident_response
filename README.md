@@ -11,14 +11,14 @@ List the steps on how to run your project
 
 ## Features
 
-* Standard User Features
+### Standard User Features
 1. Registration and Email Verification
 2. Login
 3. Ticket Submission
 4. Ticket Tracking
 5. Search Functionality
 
-* IT Security User Features
+### IT Security User Features
 1. Ticket Assignment
 2. Login
 3. Ticket Tracking/Statistics
