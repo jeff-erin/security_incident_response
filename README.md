@@ -1,9 +1,7 @@
 # Need2Kno
 ## Description (10 pts)
 
-Briefly describe what your project is all about. (5 pts)
-
-Formatting (5 pts): make sure you follow the sample formats with headers, bullet points, highlights...
+Need2Kno is a cyber security incident response ticketing system that will give users a centralized location to report security incidents to their companies IT Security team. Need2Kno is designed to handle threats like phishing attacks and other Social Engineering attacks that focus on end users.
 
 ## Getting Started (20 pts)
 ### Install (10 pts)
