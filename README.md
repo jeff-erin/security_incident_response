@@ -1,5 +1,5 @@
 # Need2Kno
-## Description (10 pts)
+## Description
 
 Need2Kno is a cyber security incident response ticketing system that will give users a centralized location to report security incidents to their companies IT Security team. Need2Kno is designed to handle threats like phishing attacks and other Social Engineering attacks that focus on end users.
 
@@ -9,7 +9,7 @@ List the steps on how to install your project
 ### Run (10 pts)
 List the steps on how to run your project
 
-## Features (10 pts)
+## Features
 
 * Standard User Features
 1. Registration and Email Verification
@@ -42,7 +42,7 @@ Sample: https://www.youtube.com/watch?v=Pr-JMqTkdEM
 
 How to record your screen: https://www.techradar.com/how-to/record-your-screen
 
-## References (10 pts)
+## References
 
 -PHPMailer (https://github.com/PHPMailer/PHPMailer)
 
