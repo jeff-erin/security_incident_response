@@ -19,9 +19,14 @@ List the steps on how to run your project
 5. Search Functionality
 
 * IT Security User Features
-1.
-2.
-3.
+1. Ticket Assignment
+2. Login
+3. Ticket Tracking/Statistics
+4. Search Functionality
+5. Close Ticket Function
+6. System Admin Features
+    * Create New Admin
+    * Delete Current Admin
 
 
 ## Demo video (50 pts)
