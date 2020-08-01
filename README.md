@@ -10,11 +10,16 @@ List the steps on how to install your project
 List the steps on how to run your project
 
 ## Features (10 pts)
-List all the features of your application
-1. Feature #1
-2. Feature #2
-3. Feature #3 
-...
+
+*Standard User Features
+    1. 
+    2. 
+    3. 
+ *IT Security User Features
+    1.
+    2.
+    3.
+
 
 ## Demo video (50 pts)
 
@@ -35,10 +40,9 @@ How to record your screen: https://www.techradar.com/how-to/record-your-screen
 
 ## Team members
 
-* Roger Federer, Team Lead
-* Tiger Woods, Bug Fixer
-Roger Federer, Team Lead
-Tiger Woods, Bug Fixer
+* Erin Shea
+* Jeff Gore
+
 
 
     
