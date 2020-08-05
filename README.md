@@ -3,11 +3,25 @@
 
 Need2Kno is a cyber security incident response ticketing system that will give users a centralized location to report security incidents to their companies IT Security team. Need2Kno is designed to handle threats like phishing attacks and other Social Engineering attacks that focus on end users.
 
-## Getting Started (20 pts)
-### Install (10 pts)
-1. Download XAMMP: https://www.apachefriends.org/index.html
-### Run (10 pts)
-List the steps on how to run your project
+## Getting Started
+### Install
+1. Download XAMPP: https://www.apachefriends.org/index.html
+2. Download this repository
+3. Launch XAMPP Application folder
+4. Under xamppfiles/htcdocs create folder "SeniorProject" and place downloaded css and html folders inside
+5. Start XAMPP servers
+6. Navigate to http://localhost/phpmyadmin/ and import Need2Kno.sql
+
+### Run
+ 
+ If stopped, start XAMMP Servers
+
+#### Standard Users:
+ Navigate to https://localhost/SeniorProject/html/Login.html
+ 
+#### IT Security Users:
+ Navigate to https://localhost/SeniorProject/html/IT_Login.html
+
 
 ## Features
 
