@@ -5,7 +5,7 @@ Need2Kno is a cyber security incident response ticketing system that will give u
 
 ## Getting Started (20 pts)
 ### Install (10 pts)
-List the steps on how to install your project
+*Download XAMMP
 ### Run (10 pts)
 List the steps on how to run your project
 
